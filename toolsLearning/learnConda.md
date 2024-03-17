@@ -15,4 +15,5 @@ conda install package
 conda uninstall package
 
 ## 如何将conda环境和jupyter环境关联
+demo 代表环境名称
 python -m ipykernel install --user --name demo --display-name "demo"
