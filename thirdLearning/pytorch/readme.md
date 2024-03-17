@@ -73,3 +73,32 @@ visdom
 ## 03反向传播
 学习pytorch
 https://pytorch.org/tutorials/beginner/basics/intro.html
+
+## 04pytorch实现线性回归
+
+训练4部曲
+1. 准备数据集
+2. 通过神经网络设计模型
+3. 构造损失函数和优化器
+4. 训练
+
+### 构造线性模型
+```python
+class LinearModel(torch.nn.Module):
+    def __init__(self):
+        super(LinearModel, self).__init__()
+        self.linear = torch.nn.Linear(1,1)
+    def forward(self, x):
+        y_pred = self.linear(x)
+        return y_pred
+```
+
+如何理解torch.nn.Linear
+
+https://pytorch.org/docs/stable/generated/torch.nn.Linear.html
+
+理解：y = xw + b
+假设y = n x 2
+x = n x 3, w = 3 x 2 即可。
+
+从直观上更好理解。 一般将n作为第多少个样本。 列用来表示特征个数。
