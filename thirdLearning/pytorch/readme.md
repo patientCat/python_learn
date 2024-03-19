@@ -22,3 +22,6 @@ https://discuss.pytorch.org/t/runtimeerror-mat1-and-mat2-must-have-the-same-dtyp
 
 default model.weight and bias are torch.float32
 
+### 2. 如果继承了nn.Module， 但是没有调用父类初始化
+
+https://www.zhihu.com/question/59973860
