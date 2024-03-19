@@ -104,7 +104,7 @@ x = n x 3, w = 3 x 2 即可。
 从直观上更好理解。 一般将n作为第多少个样本。 列用来表示特征个数。
 
 
-## 06逻辑斯蒂回归
+## 05逻辑斯蒂回归
 
 分类问题和回归问题区别
 ![](https://luke-1307356219.cos.ap-chongqing.myqcloud.com//markdown/202403182236013.png)
@@ -128,3 +128,27 @@ https://www.bilibili.com/video/BV1mZ4y1R76t/?spm_id_from=333.337.search-card.all
 
 信息商
 > https://www.bilibili.com/video/BV1Ga41127Zu/?spm_id_from=333.337.search-card.all.click&vd_source=842b1225f5d953c8df3fd60918cd05ff
+
+
+## 07 加载数据集
+
+### 为什么使用mini-batch
+Batch训练数据，虽然速度快， 但是容易进入鞍点。
+SGD容易走出鞍点，但是训练速度慢。
+
+epoch = one forward pass and one backward pass of all the training examples
+batch-size = the number of training data in one forward
+iteration = datasize / batchsize, in one epoch, the number of train count to use batch-size to train all data
+
+```python
+for i in range(epoch):
+    for i in range(iteration):
+        pass
+
+```
+
+### dataloader
+
+![](https://luke-1307356219.cos.ap-chongqing.myqcloud.com//markdown/202403200027418.png)
+
+方便进行mini-batch的训练
