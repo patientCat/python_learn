@@ -152,3 +152,13 @@ for i in range(epoch):
 ![](https://luke-1307356219.cos.ap-chongqing.myqcloud.com//markdown/202403200027418.png)
 
 方便进行mini-batch的训练
+
+## 08 多分类问题
+### softmax
+保证所有输出都大于0。
+和为1。
+
+![](https://luke-1307356219.cos.ap-chongqing.myqcloud.com//markdown/202403202049423.png)
+
+transform ： 归一化
+
