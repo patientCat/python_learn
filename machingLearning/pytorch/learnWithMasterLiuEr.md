@@ -160,9 +160,14 @@ for i in range(epoch):
 
 ![](https://luke-1307356219.cos.ap-chongqing.myqcloud.com//markdown/202403202049423.png)
 
+https://victorzhou.com/blog/softmax/
+
+a soft-max layer is to change a realtime number to probability distribution.
+
 transform ： 归一化
 
-## 09 卷积神经网络
+
+## 09卷积神经网络
 全连接神经网络为什么不好？
 
 全连接神经网络（Fully Connected Neural Networks，FCNN）和卷积神经网络（Convolutional Neural Networks，CNN）都是深度学习的重要组成部分，但在许多情况下，CNN的表现优于FCNN，主要有以下几个原因：
@@ -180,6 +185,43 @@ transform ： 归一化
 ### 卷积核
 用来提取图像特征。
 
+直观理解。
+假设一个kernel = 3x3的卷积器。
+原始数据经过卷积器后，就可以提取局部特征
+
+卷积核的意义就是去提取图像的特征
+卷积核的样子是有不同的。
+https://www.bilibili.com/video/BV1VV411478E/?spm_id_from=333.337.search-card.all.click&vd_source=842b1225f5d953c8df3fd60918cd05ff
+
 ### 下采样：max-pooling
 用来减少数据量
 
+
+## 10高级神经网络
+
+### inception block
+对于神经网络来说， 超参数kernelSize的选取非常难？
+如何选取呢？
+
+既然不知道哪个好，就把各种可能都尝试下， 然后累积到一起。训练完成后，效果好的配置权重就大，效果不好的权重就小。
+
+![](https://luke-1307356219.cos.ap-chongqing.myqcloud.com//markdown/202403231753250.png)
+
+要保证每个路径的结果W，H一致 ，要利用stride和padding
+
+1x1的卷积有什么用？
+
+### 如何理解信息融合
+
+假设有3维向量，表示语文，英语，数据的成绩
+```angular2html
+[100, 110, 87]
+[11, 109, 60]
+
+如何比较这俩个向量呢？
+最简单的算法就是将3维向量转为1维向量。然后进行比较。
+
+这个转为1维向量的过程，就是信息融合。
+```
+
+1x1的卷积，可以将多通道的信息进行融合。本质就是将某个位置的值，sum了每个通道。
