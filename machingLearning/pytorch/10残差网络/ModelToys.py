@@ -24,8 +24,8 @@ class Net(torch.nn.Module):
 
     def forward(self, x):
         batchSize = x.shape[0]
-        x = self.activeF(self.pooling(self.conv1(x)))
-        x = self.activeF(self.pooling(self.conv2(x)))
+        x = self.resBlock1(x)
+        x = self.resBlock2(x)
         print(f"res={x.shape}")
         x = x.view(batchSize, -1)
         x = self.linear5(x)
@@ -35,8 +35,8 @@ class Net(torch.nn.Module):
 class ResModel(torch.nn.Module):
     def __init__(self):
         super().__init__()
-        self.conv1 = torch.nn.Conv2d(1, 1, kernel_size=(3, 3))
-        self.conv2 = torch.nn.Conv2d(1, 1, kernel_size=(3, 3))
+        self.conv1 = torch.nn.Conv2d(1, 1, kernel_size=3)
+        self.conv2 = torch.nn.Conv2d(1, 1, kernel_size=3)
         self.relu = torch.nn.functional.relu
 
     def forward(self, x):
