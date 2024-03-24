@@ -196,9 +196,21 @@ https://www.bilibili.com/video/BV1VV411478E/?spm_id_from=333.337.search-card.all
 ### 下采样：max-pooling
 用来减少数据量
 
+### 理解
+这里要明白一个点，哪些block是有参数的，哪些是没有的。
+线性层，卷积层有参数。因为需要训练卷积层的参数。
 
-## 10高级神经网络
+卷积层对输入channel进行扩张，就是为了训练不同的卷积层，提取不同的特征。
 
+
+test:
+> 对一个图片经过卷积层，查看不同channel的值。
+
+可以看到，经过训练后的卷积层，每个channel的权重值不一样。
+![](https://luke-1307356219.cos.ap-chongqing.myqcloud.com//markdown/202403242153425.png)
+## 10高级卷积神经网络
+
+googleNet
 ### inception block
 对于神经网络来说， 超参数kernelSize的选取非常难？
 如何选取呢？
@@ -225,3 +237,16 @@ https://www.bilibili.com/video/BV1VV411478E/?spm_id_from=333.337.search-card.all
 ```
 
 1x1的卷积，可以将多通道的信息进行融合。本质就是将某个位置的值，sum了每个通道。
+
+> 理解卷积核后的输出通道。 用的是相同size，但是不同权重，取出多个维度特征。
+
+1. 提前对数据进行降低维度。减少数据量。
+2. 对不同通道信息进行融合。
+
+
+resNet
+### 梯度消失
+
+![](https://luke-1307356219.cos.ap-chongqing.myqcloud.com//markdown/202403242110191.png)
+为啥resNet可以解决梯度消失？
+
