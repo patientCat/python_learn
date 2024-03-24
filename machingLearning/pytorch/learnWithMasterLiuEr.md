@@ -250,3 +250,8 @@ resNet
 ![](https://luke-1307356219.cos.ap-chongqing.myqcloud.com//markdown/202403242110191.png)
 为啥resNet可以解决梯度消失？
 
+### 后面的话
+1. 深度学习理论
+2. 多阅读Pytorch文档，至少通读一遍
+3. 复现一些经典的工作
+4. 扩充视野
