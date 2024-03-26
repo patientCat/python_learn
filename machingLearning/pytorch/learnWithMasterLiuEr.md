@@ -255,3 +255,16 @@ resNet
 2. 多阅读Pytorch文档，至少通读一遍
 3. 复现一些经典的工作
 4. 扩充视野
+
+
+## 11 循环神经网络
+
+https://towardsdatascience.com/learn-how-recurrent-neural-networks-work-84e975feaaf7
+
+对于卷积神经网络来说，只用到了一个方向的信息。没有任何循环。
+
+但是对于Squential Data来说，需要利用到反馈。说白了就是将系统上一时刻的输出反馈到下一时刻系统的输入上。
+这样系统就拥有了记忆性。
+
+> Note: have a free time to read this book
+> http://neuralnetworksanddeeplearning.com/

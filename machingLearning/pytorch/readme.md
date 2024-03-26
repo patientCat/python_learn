@@ -25,3 +25,9 @@ default model.weight and bias are torch.float32
 ### 2. 如果继承了nn.Module， 但是没有调用父类初始化
 
 https://www.zhihu.com/question/59973860
+
+### 3. View size is not compatible with input tensor’s size and stride
+
+https://discuss.pytorch.org/t/view-size-is-not-compatible-with-input-tensors-size-and-stride/121488
+
+是因为pytorch内部分配内存没有连续
