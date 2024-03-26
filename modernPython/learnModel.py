@@ -55,3 +55,20 @@ ns = json.loads(json_str, object_hook=lambda d: types.SimpleNamespace(**d))
 
 print(ns.list)
 print(ns.list[0].name)
+
+
+# here are some complex examples which are often used in daily word
+
+
+person_list = [Person("luke", 12), Person("james", 18)]
+
+## to dict
+person_dict = {person.name:person for person in person_list}
+print(person_dict)
+
+## to list
+
+person_name_list = [person.name for person in person_list]
+print(person_name_list)
+
+

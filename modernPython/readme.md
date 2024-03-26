@@ -16,3 +16,7 @@ python本身运行时不需要类型，这是语言特性。但是如果能对�
 学习如何将Json转为Model进行处理
 
 建议使用SimpleNameSpace进行处理，类似js中的形式。
+
+## Python 3 Module of the Week
+
+https://pymotw.com/3/
