@@ -23,21 +23,21 @@ class Net(torch.nn.Module):
         self.pooling = torch.nn.MaxPool2d(3)
         self.linear5 = torch.nn.Linear(80, 10)
         self.activeF = torch.nn.functional.relu
+        self.softmax = torch.nn.Softmax()
 
     def forward(self, x):
         batchSize = x.shape[0]
         x = self.activeF(self.conv1(x))
         x = self.pooling(x)
         x = self.res_block1(x)
-        print(f"res_block1={x.shape}")
-        
+
         x = self.activeF(self.conv2(x))
         x = self.pooling(x)
         x = self.res_block2(x)
 
-        print(f"res={x.shape}")
         x = x.view(batchSize, -1)
         x = self.linear5(x)
+        x = self.softmax(x)
         return x
 
 

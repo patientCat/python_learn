@@ -9,3 +9,8 @@ uninstall, 然后install解决。
 conda install pytorch 不行，会导致kernel died
 去conda官网，其有推荐，重新安装即可。大概率是因为之前版本太低
 https://pytorch.org/get-started/locally/
+
+
+## Jupyter远程使用服务器
+
+https://zhuanlan.zhihu.com/p/440080687
